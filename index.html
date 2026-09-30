@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>프로젝트 및 수행경험 자료 · EastBrightness</title>
+<style>
+  body { margin: 0; background: #fafaf8; color: #222; font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; line-height: 1.7; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-size: 26px; margin: 0 0 6px; }
+  h2 { font-size: 19px; margin: 56px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #ddd; }
+  p, li { font-size: 15.5px; }
+  .sub { color: #666; margin: 0 0 8px; font-size: 14.5px; }
+  a { color: #1a5fb4; }
+  img { max-width: 100%; height: auto; display: block; border: 1px solid #ddd; }
+  figure { margin: 16px 0; }
+  figcaption { font-size: 13.5px; color: #666; margin-top: 6px; }
+  .narrow { max-width: 460px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; margin: 10px 0; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid #e3e3e0; vertical-align: top; }
+  th { width: 130px; color: #555; font-weight: 600; }
+  ul { padding-left: 20px; }
+  footer { margin-top: 64px; font-size: 13px; color: #888; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>프로젝트 및 수행경험 자료</h1>
+<p class="sub">현재 운영 중인 앱과 AI 경진대회 수상 경험을 정리한 참고자료입니다.</p>
+
+<h2>1. 운영 중인 앱</h2>
+<p>Google Play Console에 등록해 프로덕션 상태로 운영하고 있는 앱 2개입니다.</p>
+<figure>
+  <img src="assets/apps.jpg" alt="Google Play Console 고정된 앱 목록" width="934" height="492">
+  <figcaption>Google Play Console 화면 (설치한 사용자 수는 캡처 시점 기준)</figcaption>
+</figure>
+<table>
+  <tr><th>온탕</th><td>우리 동네 가까운 … · com.ontang.ontang · 설치 사용자 43명 · 프로덕션 · 최근 업데이트 2026.08.27</td></tr>
+  <tr><th>디너메이트</th><td>나와 딱 맞… · com.eastbrightness.sonet · 설치 사용자 9명 · 프로덕션 · 최근 업데이트 2026.05.20</td></tr>
+</table>
+<p>소스 저장소: <a href="https://github.com/EastBrightness">github.com/EastBrightness</a></p>
+
+<h2>2. 2025 해군·해병대 인공지능 경진대회 우수상</h2>
+<table>
+  <tr><th>대회</th><td>2025년도 해군·해병대 인공지능 경진대회</td></tr>
+  <tr><th>수상</th><td>우수상 (IBK기업은행 은행장 상장)</td></tr>
+  <tr><th>팀명</th><td>검은콩 순수두유</td></tr>
+  <tr><th>수상일</th><td>2025년 6월 17일</td></tr>
+  <tr><th>과제</th><td>AIS 항적 데이터 기반 의심선박 · 적선박 식별 알고리즘 개발</td></tr>
+</table>
+
+<figure class="narrow">
+  <img src="assets/award.jpg" alt="상장 사진" width="1200" height="1600">
+  <figcaption>상장 (IBK기업은행)</figcaption>
+</figure>
+
+<p>수상 관련 보도:
+  <a href="https://www.news1.kr/photos/7346837" target="_blank" rel="noopener">뉴스1 · ‘해군·해병대 사이버보안경진대회 및 인공지능경진대회’ 수상자 (2025.06.17)</a>
+</p>
+
+<h2>3. 발표 자료</h2>
+<figure class="narrow">
+  <img src="assets/deck-thumb.jpg" alt="발표자료 첫 장">
+  <figcaption>발표 파일 (한컴오피스 쇼, .show · 12장)</figcaption>
+</figure>
+<p><a href="assets/presentation.show" download>발표 파일 내려받기 (.show, 약 1.8MB)</a></p>
+
+<p>발표 내용 요약</p>
+<ul>
+  <li><b>의심선박 식별</b> — XGBoost 기본 모델로 val F1 0.99 / test F1 0.997. 이상행동 조건과 유사한 feature에 가중을 주는 방식(상관 기반 복제, 상위 5개 feature, 값 증폭)을 RandomForest로 비교 실험.</li>
+  <li><b>적선박 식별</b> — 선박별 항적을 이미지로 시각화해 분류해 봤으나 성능이 낮아 폐기. 이상 좌표·중복 제거, 시간순 정렬 후 이동거리, 경로 직선성, 속도·방향 변화, AIS 신호 불규칙성 등 파생변수를 생성.</li>
+  <li><b>모델 선정</b> — 1D Conv + LSTM/Transformer 시계열 모델 0.97, 부스팅 계열 0.98, 앙상블 0.99. Optimizer는 RAdam · AdamP · AdamW 비교.</li>
+</ul>
+<p>제출자료 성격상 팀원 역할 등 자세한 내용은 위 발표 파일에 있습니다.</p>
+
+<footer>EastBrightness</footer>
+</main>
+</body>
+</html>
